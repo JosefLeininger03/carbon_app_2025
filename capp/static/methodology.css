@@ -20,17 +20,17 @@ ol {
 }
 /* Section header */
 .section_header_methodology {
-  background-color:#2a4359;
+  background-color:#b5e7a0;
 }
 .header {
   display: flex;  
   align-items: start;
-  background: #2a4359;
+  background: #b5e7a0;
 }
 .header .box {
   flex: 1;
-  background: #2a4359;
-  color: #fff;
+  background: #b5e7a0;
+  color: #2a4359;
   border-radius: 10px;
   margin: 20px 10px;
   padding: 15px 20px;

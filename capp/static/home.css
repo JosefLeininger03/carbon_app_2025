@@ -36,7 +36,7 @@ p {
 .header_home {
   position: relative;                 /* above overlay */
   text-align: center;
-  color: #fff;                        /* ✅ white text */
+  color: #fff;                        /* white text */
   z-index: 1;
   padding: 20px;
   max-width: 900px;
@@ -47,7 +47,7 @@ p {
 .header_home p {
   font-size: 20px;
   margin: 10px auto 20px auto;  /* centers and adds spacing */
-  text-align: center;           /* ✅ ensures text is centered */
+  text-align: center;           /* ensures text is centered */
   max-width: 600px;             /* keeps it nicely aligned under the title */
   line-height: 1.5;
 }

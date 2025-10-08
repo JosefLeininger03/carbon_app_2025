@@ -2,119 +2,145 @@
 {% block content %}
 
 <!-- Header -->
-<section class="section_header_home">
-  <div class="container">
+<section class="section_header_home" style="--hero-img: url('{{ url_for('static', filename='icons/nature.jpg') }}');">
+  <div class="header_home">
+    <div class="box"> 
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">
+                      {{ message }}
+                  </div> 
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+      <script>
+        setTimeout(function () {
+          var flashes = document.querySelectorAll('.alert');
+          flashes.forEach((flash) => flash.remove());
+        }, 5000);
+      </script>
 
-    <div class="header_home">
-      <div class="box"> 
-        <h1 style="font-size:55px;"><span class="text-logo"> Home</span></h1>
-        <p style="text-align:left;">
-          Every choice we make has an impact on the planet. From how we travel to what we eat, our daily activities release carbon into the atmosphere. This helps you understand your personal carbon footprint by tracking the emissions linked to your lifestyle. With clear insights and easy to use tools, you’ll discover where your biggest emissions come from and how small changes can make a big difference. Together, we can take meaningful steps toward a more sustainable future.
-        </p>
-        <div class="container_buttons_links_header_home">
-          <div class="btn">
-              <a href="{{url_for('users.register')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Register</a>
-          </div>
-          <div class="btn">
-              <a href="{{url_for('users.login')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Login</a>
-          </div>
-        </div>  
-      </div>
-      <div class="box">
-        <img 
-          src="{{url_for('static', filename='icons/carbon_app.svg')}}"
-          width="325" 
-          height="325"
-          alt=""/>
-      </div>
+      <h1 style="font-size:50px;"><span class="text-logo"><i class="fa-solid fa-earth-americas"></i> Welcome to PlanetZero</span></h1>
+      <p>Your journey to a sustainable future begins here</p>
+
+      <div class="container_buttons_links_header_home">
+        <div class="btn">
+          <a href="{{url_for('users.login')}}" class="btn btn-primary btn-lg mr-2" style="background-color:#02460c; border-color: #02460c;">Let's get started</a>
+        </div>
+      </div>  
     </div>
-
   </div>
 </section> 
+
+<!-- Mission Box Section -->
+<section class="section_message scroll-animate">
+  <div class="container">
+    <div class="developers" style="display:block;">
+      <h1 style="text-align:center;">Our Mission</h1>
+      <div class="mission_textbox">
+        <p>
+          At PlanetZero, we believe every small action matters.  
+          Our mission is to inspire individuals and communities to make meaningful, sustainable choices  
+          that reduce carbon emissions and protect the planet for future generations.
+        </p>
+  </div>
+</section>
+
 
 <!-- Developers -->
 <section class="section_developers">
   <div class="container">
 
     <div class="developers" style="display:block;">
-      <h1 style="text-align:center;"> Our Team</h1>
-      <p>
-        Our team of economists and developers is dedicated to turning complex environmental data into simple, actionable insights. By combining expertise in behavioral science, data analytics, and sustainable practices, we have built intuitive tools that help you understand your personal carbon footprint. Each feature is thoughtfully designed to reveal the real-world impact of your daily choices and empower you to make small, meaningful changes that together contribute to a more sustainable future.
-      </p>      
+      <h1 style="text-align:center;"> Meet our team</h1>
+      <div class="ourteam_text">
+        <p>
+          Our team of economists and developers ... Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, ut? Praesentium quidem sunt perspiciatis doloremque fugiat nesciunt quaerat ullam, pariatur iure unde ratione ipsum adipisci repellendus, repudiandae hic sit, temporibus molestias corrupti aut soluta sequi! Architecto deleniti expedita nisi repudiandae enim eum quas odit facilis placeat neque porro, animi incidunt consectetur. Maiores ab saepe tempora, iure asperiores beatae suscipit cum ipsum, rerum doloremque reprehenderit dolorum debitis, aliquam quasi. Maiores corporis fuga quasi nesciunt dolor iste, inventore necessitatibus unde!
+        </p>      
     </div>
 
     <div class="developers">
         <div class="box">
           <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Josef Leininger</h3>
-          <p> Josef is a exchange student from Munich in germany. He is responsibe for the business modell
+          <h3>Developer 1</h3>
+          <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
           </p>
           <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
+            <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
           </div> 
         </div>
         <div class="box">
           <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Quan Cao Nguyen</h3>
+          <h3>Developer 2</h3>
           <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
           </p>
           <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
+            <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
           </div> 
         </div>           
         <div class="box">
           <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Leevi Pihlaja</h3>
+          <h3>Developer 3</h3>
           <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
           </p>
           <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
+            <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
           </div> 
         </div>     
     </div>
 
     <div class="developers">
-        <div class="box2">
-          <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Carl August Lygre-Wiencke</h3>
-          <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
-          </p>
-          <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
-          </div> 
-        </div>
-        <div class="box2">
-          <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Sander</h3>
-          <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
-          </p>
-          <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
-          </div> 
-        </div>           
-        <div class="box2">
-          <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="" style="border-radius: 50%; width:200px;">
-          <h3>Philip van Bommel</h3>
-          <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
-          </p>
-          <div class="section_container_buttons_developers">
-            <a class="btn_developers" href="#"  target="_blank">Curriculum</a>
-          </div> 
-        </div>     
-    </div>
+      <div class="box2">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Developer 4</h3>
+        <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      <div class="box2">
+        <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Quan Cao Nguyen</h3>
+        <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      </div>            
+    
+          <div class="developers">
+      <div class="box2">
+        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Developer 6</h3>
+        <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      <div class="box2">
+        <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Developer 7</h3>
+        <p>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia repellat omnis? Odit enim hic atque dolorem iste natus inventore perspiciatis vitae dolore animi veritatis aut nemo unde similique, officia reiciendis ex architecto voluptates soluta ab tempore facilis quisquam cum.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      </div>             
+        
+
+  <script>
+  const observer = new IntersectionObserver(entries =>
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('show'))
+  );
+  document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+</script>
 
   </div>          
 </section>
         
-
 {% endblock content %}
-
-
-
-
-
-
-
-
-
-
