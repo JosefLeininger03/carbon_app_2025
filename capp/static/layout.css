@@ -1,91 +1,59 @@
-/* Colors */
-/* Rainy theme 5 -Green Digitalization Course and Students Apps-:
-Navbar (background): #8bbbd9
-Navbar (a hover): #466fa6
-Navbar (logo): #568c63
-Navbar (a menu): #2a4359
-*/
-
-/* Google fonts Roboto  */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
-
-/* CSS utilities */
-*{
+/* General */
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: #fff;
   line-height: 1.6;
 }
+
 .container {
   margin: auto;
   max-width: 1320px;
 }
-ul { 
-  list-style: none;
-  font-size: 400;
-}
-a {
-  color: #333;
-  text-decoration: none;
-}
-h1, h2 {
-  font-weight: 400;
-  line-height: 1.2;
-}
-p {
-  margin: 10px 0;
-  font-size: 14px;
-}
-img {
-  width: 100%;
-}
-/* Navbar  */
+
+/* 🌍 NAVBAR */
 .section_carbon_app_navbar {
-  background-color: #b5e7a0; /* light green top bar */
+  background-color: #b5e7a0;
 }
 
 .carbon_app_navbar {
   display: flex;
-  justify-content: space-between; /* logo left, links right */
+  justify-content: space-between;
   align-items: center;
-  height: 70px;
-  background-color: #b5e7a0;
+  height: 80px;
   padding: 0 20px;
 }
 
-/* Make the logo (Carbon App on the left) bigger */
-.carbon_app_navbar .logo a {
+/* Logo */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 36px;
   font-weight: 600;
   color: #2a4359;
   text-decoration: none;
-  display: flex;
-  align-items: center;
 }
 
-.text-logo {
+.logo i {
   color: #568c63;
-  display: inline-flex;
-  align-items: center;
+  font-size: 40px;
 }
 
-.text-logo i {
-  margin-right: 6px;
-  font-size: 50px; /* slightly larger icon */
+.planet-text {
   color: #568c63;
 }
 
-/* Nav links (Methodology, Carbon App, Login) */
+/* Navbar links */
 .navbar-links ul {
-  display: flex;                /* ✅ keeps items side-by-side */
-  flex-direction: row;          /* ensures horizontal layout */
-  justify-content: flex-end;    /* push them to the right */
+  display: flex;
+  gap: 20px;
   align-items: center;
-  gap: 10px;
   margin: 0;
   padding: 0;
 }
@@ -97,51 +65,100 @@ img {
 .navbar-links a {
   color: #2a4359;
   font-size: 22px;
-  font-weight: 400;
-  padding: 10px 15px;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 .navbar-links a:hover {
-  border-bottom: #2a4359 4px solid;
+  border-bottom: 3px solid #2a4359;
 }
 
-/* Footer */
+/* 🌱 FOOTER */
 .section_footer {
   background-color: #b5e7a0;
+  padding: 60px 40px;
+  margin-top: 60px;
 }
 
 .footer {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 70px;
+  justify-content: space-between;
   align-items: center;
-  background-color: #b5e7a0;
-  font-size: 36px;
-  font-weight: 600;
+  flex-wrap: wrap;
 }
 
-/* Media query */
+/* Left: logo + text centered */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 36px;
+  font-weight: 600;
+  color: #000;
+}
+
+.footer-logo i {
+  color: #568c63;
+  font-size: 42px;
+}
+
+.footer-left p {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #000;
+}
+
+/* Right: links stacked under each other */
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: flex-end;  /* align to the right */
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #2a4359;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #568c63;
+}
+
+/* Up icon */
+.up-icon {
+  color: #568c63;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.up-icon:hover {
+  transform: translateY(-4px);
+}
+
+/* 📱 Mobile responsive */
 @media (max-width: 768px) {
-  .carbon_app_navbar {
+  .footer {
     flex-direction: column;
-    height: auto;
-    padding: 10px;
+    text-align: center;
   }
 
-  .carbon_app_navbar .logo a {
-    font-size: 28px;
-  }
-
-  .navbar-links ul {
-    flex-direction: column; /* only stack vertically on small screens */
-    width: 100%;
+  .footer-links {
     align-items: center;
-  }
-
-  .navbar-links a {
-    font-size: 18px;
-    padding: 5px 15px;
   }
 }
