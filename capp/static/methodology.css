@@ -9,6 +9,7 @@ Methodology, section 2 (methodology, boxes): #8badd9
 p {
   margin: 10px 0;
   font-size: 18px;
+  max-width: 80ch;
 }
 h4 {
   font-size: 18px;
@@ -37,6 +38,7 @@ ol {
   text-align:center;
   align-items: center;
   justify-content: center;
+  margin-top: 40px;  
 }
 .header .box:nth-of-type(1) {
   flex-grow:2;
@@ -45,8 +47,9 @@ ol {
   flex-grow:1;
 }
 .container_buttons_links_header {
+  margin-top: 60px;  
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   flex-wrap:wrap;
 }
@@ -62,14 +65,15 @@ ol {
   justify-content:center;
   align-items:center;
 }
-/* Section methodology */
-.section_body_methodology {
-  background-color:#466fa6;
-}
+
+
 .methodology {
   display: flex;  
   align-items: start;
-  background: #466fa6;
+  background: #fff;
+  margin-top: 60px;  
+  
+
 }
 /* Table with one column */
 .methodology .box_table1 {
@@ -85,14 +89,14 @@ ol {
 }
 .methodology .box_table1:nth-of-type(1) {
   flex-grow:1;
-  background: #466fa6;
+  background: #fff;
 }
 .methodology .box_table1:nth-of-type(2) {
   flex-grow:4;
 }
 .methodology .box_table1:nth-of-type(3) {
   flex-grow:1;
-  background: #466fa6;
+  background: #fff;
 }
 /* Table with two columns */
 .methodology .box_table2 {
