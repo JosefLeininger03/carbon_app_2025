@@ -9,6 +9,7 @@
   .register_section_css .container {
   display: flex;
   background: #9fa7bf;
+  padding: 20px 0;
   }
   
   .register_section_css .container {
@@ -57,3 +58,4 @@
   text-align:left;
 
   }
+
