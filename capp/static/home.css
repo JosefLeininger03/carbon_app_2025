@@ -1,67 +1,97 @@
 /* Colors 
-Home, section 1 (head, background): #9fa7bf
-Home, section 1 (head, boxes): #568c63
+Home, section 1 (head, background): image overlay
 Home, section 2 (developers, background): #c5c8d9 
 Home, section 2 (developers, boxes): #49736f
- */
+*/
 
 /* Utilities  */
 p {
   margin: 10px 0;
   font-size: 18px;
 }
-/* Section header_home */
+
+/* Full screen background */
 .section_header_home {
-  background-color:#9fa7bf;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;                  /* full screen height */
+  background-image: var(--hero-img);
+  background-size: cover;             /* fll width */
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;                /* vertical center */
+  justify-content: center;
+  overflow: hidden;            /* horizontal center */
 }
+
+.section_header_home:before {  /* form chatgtp,m made the picture better */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);    /* darker overlay for white text */
+}
+
+/* center content */
 .header_home {
-  display: flex;  
-  align-items: start;
-  background: #9fa7bf;
+  position: relative;                 /* above overlay */
+  text-align: center;
+  color: #fff;                        /* ✅ white text */
+  z-index: 1;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
-.header_home .box {
-  flex: 1;
-  background: #9fa7bf;
-  color: #fff;
-  border-radius: 10px;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align:center;
-  align-items: center;
-  justify-content: center;
+
+
+.header_home p {
+  font-size: 20px;
+  margin: 10px auto 20px auto;  /* centers and adds spacing */
+  text-align: center;           /* ✅ ensures text is centered */
+  max-width: 600px;             /* keeps it nicely aligned under the title */
+  line-height: 1.5;
 }
-.header_home .box:nth-of-type(1) {
-  flex-grow:2;
+
+
+
+/* Our mission */
+.section_header_home { 
+  margin-bottom: 100px; 
 }
-.header_home .box:nth-of-type(2) {
-  flex-grow:1;
+
+.section_mission {
+  background-color: #ffffff;
+} 
+
+.mission_textbox {
+  background-color: #ffffff;       /* white inner box */
+  border: 2px solid #2f5936;       /* dark green outline */
+  border-radius: 12px;
+  padding: 25px 30px;
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
 }
-.container_buttons_links_header_home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap:wrap;
-}
-.container_buttons_links_header_home a:hover {
-  color: #9fa7bf;
-}
-.container_buttons_links_header_home btn {
-  width: 100px;
-  height: 100px;
-  background: #9fa7bf;
-  color: #fff;
-  display: flex;
-  justify-content:center;
-  align-items:center;
-}
+
+
+
 /* Section developers */
 .section_developers {
-  background-color:#c5c8d9;
+  background-color: #ffffff;
+  margin-top: 100px;  
 }
+
+.ourteam_text {
+  max-width: 950px;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .developers {
   display: flex;  
   align-items: start;
-  background: #c5c8d9;
+  background: #ffffff;
+  margin-top: 10px; 
 }
 .developers .box {
   flex: 1;
@@ -93,6 +123,8 @@ p {
   text-align:center;
   align-items: center;
   justify-content: center;
+  
+  
 }
 .developers .box2:nth-of-type(1) {
   flex-grow:4;
@@ -100,10 +132,27 @@ p {
 .developers .box2:nth-of-type(2) {
   flex-grow:4;
 }
-.developers .box2:nth-of-type(3) {
-  flex-grow:4;
-  background: #c5c8d9;
+
+.developers .box3 {
+  flex: 1;
+  background: #49736f;
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  max-width: 550px;
+  margin: 0 auto;
 }
+.developers .box3:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box3:nth-of-type(2) {
+  flex-grow:4;
+}
+
 .section_container_buttons_developers {
   display: flex;
   justify-content: center;
@@ -127,6 +176,36 @@ p {
   background-color: #c5c8d9;
   border: 2px solid #c5c8d9;
   text-decoration: none;
+}
+
+
+/* Define the animation keyframes */
+@keyframes slideInUp {
+  0% {
+    opacity: 0; /* invicible */
+    transform: translateY(40px); /* start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply to your home section elements */
+.section_header_home .box {
+  animation: slideInUp 1.5s ease-out forwards;
+}
+
+/* Simple scroll animation */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1.8s ease-out;
+}
+
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 
