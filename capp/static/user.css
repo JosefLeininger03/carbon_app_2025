@@ -3,6 +3,7 @@
 .register_section_css {
   display: flex;
   background: #9fa7bf;
+  padding: 20px 0;
   }
   
   .register_section_css .container {
@@ -54,4 +55,5 @@
   margin: 0px 0px;
   padding: 0px 0px;
   text-align:left;
+
   }
