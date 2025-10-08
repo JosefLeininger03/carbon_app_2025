@@ -1,73 +1,83 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <!-- Header -->
-    <section class="section_header_carbon_app">
-        <div class="container">
-    
+<!-- SECTION 1: Main header -->
+<section class="section_header_carbon_app">
+    <div class="container">
         <div class="header_carbon_app">
+            
             <div class="box"> 
-            <h1 style="font-size:55px;"><span class="text-logo"> Carbon App Calculator</span></h1>
-            <p style="text-align:left;">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat dolores quos asperiores repellendus facilis cum illo aperiam odit doloremque nostrum. Totam excepturi labore voluptatibus iusto sapiente quisquam consectetur optio magnam voluptates omnis vel officia alias distinctio quas laborum reiciendis ratione inventore veniam, cupiditate doloribus dolore, eius natus a. Magni inventore consequuntur voluptas reprehenderit perferendis! Molestias aspernatur rem autem aut temporibus.
-            </p>
-            <div class="container_buttons_links_header_carbon_app">
-                <div class="btn">
-                    <a href="{{url_for('methodology.methodology_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Methodology</a>
-                </div>
-                <div class="btn">
-                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;", data-toggle="modal" data-target="#carbon_app_instructions">Instructions</a>
-                </div>
-                <div class="btn">
-                    <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">New entry</a>
-                </div>
-                <div class="btn">
-                    <a href="{{url_for('carbon_app.your_data')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Your data</a>
-                </div>
-            </div>  
-            <!-- Modal Instructions -->
-            <div class="modal fade" id="carbon_app_instructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                <div class="modal-content">
-          
-                    <div class="modal-header">
-                    <h5 class="modal-title", style="color:black; text-align: center;">Carbon App, instructions</h5>
+                <h1 style="font-size:55px;">
+                    <span class="text-logo">Carbon App Calculator</span>
+                </h1>
+                <p style="text-align:left;">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat dolores quos asperiores repellendus facilis cum illo aperiam odit doloremque nostrum...
+                </p>
+
+                <!-- Buttons -->
+                <div class="container_buttons_links_header_carbon_app">  
+                    <div class="btn">
+                        <a href="{{url_for('methodology.methodology_home')}}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Methodology</a>
                     </div>
-          
-                    <div class="modal-body", style="color:black">
-                    <p style="text-align: left;">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae ratione tempore id esse nobis molestias quasi explicabo possimus ea reprehenderit.
-                    </p>
-                    <ol style="text-align:left;">
-                        <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint.
-                        </li>
-                        <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, sint.
-                        </li>
-                    </ol>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;" data-toggle="modal" data-target="#carbon_app_instructions">Instructions</a>
                     </div>
-          
-                    <div class="modal-footer">
-                        <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">New entry</a>
-                        <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                    <div class="btn">
+                        <a href="{{url_for('carbon_app.new_entry')}}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">New entry</a>
                     </div>
-          
-                </div>
+                    <div class="btn">
+                        <a href="{{url_for('carbon_app.your_data')}}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Your data</a>
+                    </div>
                 </div>
             </div>
-            </div>
+
             <div class="box">
-            <img 
-                src="{{url_for('static', filename='icons/calculator.svg')}}"
-                width="325" 
-                height="325"
-                alt=""/>
+                <img 
+                    src="{{url_for('static', filename='icons/calculator.svg')}}"
+                    width="325" 
+                    height="325"
+                    alt=""/>
             </div>
         </div>
-        
+    </div>
+</section> 
+
+
+<!-- SECTION 2: Transportation selection -->
+<section class="section_transportation">
+    <div class="container">
+        <div class="header_carbon_app">
+            <div class="box">
+                <h1 style="font-size:45px;">
+                    <span class="text-logo">Please select a mode of transportation</span>
+                </h1>
+            </div>
         </div>
-    </section> 
-       
+
+        <!-- ICONS -->
+        <div class="transport-icons">   
+            <div class="icon">
+                <a href="{{url_for('carbon_app.new_entry')}}"><i class="fa-solid fa-car fa-2x"></i></a>
+                <span class="text-logo">Car</span>
+            </div>
+            <div class="icon">
+                <a href="{{url_for('carbon_app.new_entry')}}"><i class="fa-solid fa-plane fa-2x"></i></a>
+                <span class="text-logo">Plane</span>
+            </div>
+            <div class="icon">
+                <a href="{{url_for('carbon_app.new_entry')}}"><i class="fa-solid fa-bus fa-2x"></i></a>
+                <span class="text-logo">Bus</span>
+            </div>
+            <div class="icon">
+                <a href="{{url_for('carbon_app.new_entry')}}"><i class="fa-solid fa-train fa-2x"></i></a>
+                <span class="text-logo">Train</span>
+            </div>
+            <div class="icon">
+                <a href="{{url_for('carbon_app.new_entry')}}"><i class="fa-solid fa-ferry fa-2x"></i></a>
+                <span class="text-logo">Ferry</span>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock content %}
