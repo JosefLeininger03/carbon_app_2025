@@ -66,3 +66,44 @@ h4 {
     flex-direction: column;
   } 
 }
+.section_transportation {
+    background-color: #f0f7f3;   
+    padding: 60px 0;             
+    text-align: center;          
+}
+
+.section_transportation h1 {
+    font-size: 45px;
+    color: #333;
+    margin-bottom: 40px;         
+}
+
+.transport-icons {
+    display: flex;
+    justify-content: center;     
+    align-items: center;
+    flex-wrap: wrap;             /
+    gap: 50px;                   
+}
+
+.transport-icons .icon {
+    display: flex;
+    flex-direction: column;      
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+}
+
+.transport-icons .icon i {
+    color: #568c63;
+    transition: transform 0.2s;
+}
+
+.transport-icons .icon i:hover {
+    transform: scale(1.2);
+}
+
+.transport-icons .text-logo {
+    font-weight: 500;
+    color: #568c63;
+}
