@@ -82,8 +82,8 @@ h4 {
     display: flex;
     justify-content: center;     
     align-items: center;
-    flex-wrap: wrap;             /
-    gap: 80px;                   
+    flex-wrap: wrap;             
+    gap: 50px;                   
 }
 
 .transport-icons .icon {
@@ -107,5 +107,6 @@ h4 {
     font-weight: 500;
     color: #568c63;
 }
+
 
 
