@@ -1,4 +1,7 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 import os
 
 application = Flask(__name__)
@@ -6,6 +9,14 @@ application = Flask(__name__)
 # application.config['SECRET_KEY'] = os.environ['SECRET_KEY']  
 
 application.config['SECRET_KEY'] = '3oueqkfdfas8ruewqndr8ewrewrouewrere44554'
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(application)
+bcrypt = Bcrypt(application)
+login_manager = LoginManager(application)
+login_manager.login_view = 'users.login'
+login_manager.login_message_category = 'info'
 
 from capp.home.routes import home
 from capp.methodology.routes import methodology
