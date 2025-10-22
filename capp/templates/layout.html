@@ -97,11 +97,19 @@
                   <i class="fa-solid fa-calculator"></i> Carbon App
                 </a>
               </li>
+              {% if current_user.is_authenticated %}
+              <li>
+                <a href="{{ url_for('users.logout') }}">
+                  <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </a>
+              </li>
+              {% else %}
               <li>
                 <a href="{{ url_for('users.login') }}">
                   <i class="fa-solid fa-user"></i> Login
                 </a>
               </li>
+              {% endif %}
             </ul>
           </nav>
         </div>
@@ -138,11 +146,19 @@
             <i class="fa-solid fa-calculator"></i> Carbon App
           </a>
         </li>
+        {% if current_user.is_authenticated %}
+        <li>
+          <a href="{{ url_for('users.logout') }}">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </a>
+        </li>
+        {% else %}
         <li>
           <a href="{{ url_for('users.login') }}">
             <i class="fa-solid fa-user"></i> Login
           </a>
         </li>
+        {% endif %}
       </ul>
 
     </div>
