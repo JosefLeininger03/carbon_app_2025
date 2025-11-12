@@ -54,13 +54,13 @@ def new_entry_car():
     if form.validate_on_submit():
         kms = form.kms.data
         fuel = form.fuel_type.data
-        transport = 'Car'
-        # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
+        car_size = form.car_size.data
+        transport_key = 'Car'
 
-        co2 = float(kms) * efco2[transport][fuel]
+        co2 = float(kms) * efco2[transport_key][fuel]
         co2 = float("{:.2f}".format(co2))
-        emissions = Transport(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, author=current_user)
+        transport_label = f"{car_size} Car"
+        emissions = Transport(kms=kms, transport=transport_label, fuel=fuel, co2=co2, total=co2, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('carbon_app.your_data'))
