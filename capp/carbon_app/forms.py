@@ -13,7 +13,7 @@ class BusForm(FlaskForm):
 class CarForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
-    choices=[('Petrol', 'Petrol'), ('Diesel', 'Diesel'), ('No Fossil Fuel', 'No Fossil Fuel')])
+    choices=[('Petrol', 'Petrol'), ('Diesel', 'Diesel'), ('Eletrical', 'Eletrical')])
   car_size = SelectField('Car Size', [InputRequired()],
     choices=[('Small', 'Small'), ('Medium', 'Medium'), ('Big', 'Big')])
   submit = SubmitField('Submit')  
