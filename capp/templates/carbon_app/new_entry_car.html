@@ -16,11 +16,10 @@
             <li>
               Please, enter the number of kilometers.
             </li>
-            <li>
-              Please, select the type of fuel.
+            <li>Please, select the type of fuel
             </li>
             <li>
-              Please, choose the size of the car.
+              Please, select size of the car
             </li>
           </ol>
         </p>
@@ -55,7 +54,6 @@
                         {{ form.fuel_type(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-
                 <div class="form-group">
                     {{ form.car_size.label(class="form-control-label") }}
                     {% if form.car_size.errors %}
@@ -85,4 +83,3 @@
 
         
 {% endblock content %}
-
