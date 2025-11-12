@@ -2,7 +2,7 @@
 {% block content %}
 
 <!-- Header -->
-<section class="section_header_home" style="--hero-img: url('{{ url_for('static', filename='icons/naturebybanen.jpg') }}');">
+<section class="section_header_home" style="--hero-img: url('{{ url_for('static', filename='icons/nature.jpg') }}');">
   <div class="header_home">
     <div class="box"> 
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -21,15 +21,15 @@
         }, 5000);
       </script>
 
-      <h1 style="font-size:50px;"><span class="text-logo"><i class="fa-solid fa-earth-americas"></i> Welcome to PlanetZero</span></h1>
+      <h1 style="font-size:50px;"><span class="text-logo"><i class="fa-solid fa-earth-americas"></i> Welcome to VestTrack</span></h1>
       <p>Your journey to a sustainable future begins here</p>
 
       <div class="container_buttons_links_header_home">
         <div class="btn">
           {% if current_user.is_authenticated %}
-          <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#02460c; border-color: #02460c;">Let's get started</a>
+          <a href="{{ url_for('carbon_app.carbon_app_home') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#ff5a00; border-color: #ff5a00;">Let's get started</a>
           {% else %}
-          <a href="{{ url_for('users.login') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#02460c; border-color: #02460c;">Let's get started</a>
+          <a href="{{ url_for('users.login') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#ff5a00; border-color: #ff5a00;">Let's get started</a>
           {% endif %}
         </div>
       </div>  
@@ -44,11 +44,11 @@
       <h1 style="text-align:center;">Our Mission</h1>
       <div class="mission_textbox">
         <p>
-          At PlanetZero, we believe every small action matters.  
+          At VestTrack, we believe every small action matters.  
           Our mission is to inspire individuals and communities to make meaningful, sustainable choices  
           that reduce carbon emissions and protect the planet for future generations.
         </p>
-  </div>
+  </div> 
 </section>
 
 
@@ -148,7 +148,6 @@
 </section>
         
 {% endblock content %}
-
 
 
 
