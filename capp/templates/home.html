@@ -2,7 +2,7 @@
 {% block content %}
 
 <!-- Header -->
-<section class="section_header_home" style="--hero-img: url('{{ url_for('static', filename='icons/naturebybanen.jpg') }}');">
+<section class="section_header_home" style="--hero-img: url('{{ url_for('static', filename='icons/naturebybanen.jpg.jpg') }}');">
   <div class="header_home">
     <div class="box"> 
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -148,6 +148,7 @@
 </section>
         
 {% endblock content %}
+
 
 
 
