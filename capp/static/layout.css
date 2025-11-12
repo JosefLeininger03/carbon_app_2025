@@ -18,7 +18,7 @@ body {
 
 /* 🌍 NAVBAR */
 .section_carbon_app_navbar {
-  background-color: #b5e7a0;
+  background-color: #ff5a00; /* Skyss-like orange */
 }
 
 .carbon_app_navbar {
@@ -36,17 +36,17 @@ body {
   gap: 8px;
   font-size: 36px;
   font-weight: 600;
-  color: #2a4359;
+  color: #000;
   text-decoration: none;
 }
 
 .logo i {
-  color: #568c63;
+  color: #f5f5f5;
   font-size: 40px;
 }
 
 .planet-text {
-  color: #568c63;
+  color: #f5f5f5;
 }
 
 /* Navbar links */
@@ -63,19 +63,19 @@ body {
 }
 
 .navbar-links a {
-  color: #2a4359;
+  color: #000;
   font-size: 22px;
   text-decoration: none;
   transition: 0.2s;
 }
 
 .navbar-links a:hover {
-  border-bottom: 3px solid #2a4359;
+  border-bottom: 3px solid #ff5a00;
 }
 
-/* 🌱 FOOTER */
+/* FOOTER */
 .section_footer {
-  background-color: #b5e7a0;
+  background-color: #000000; 
   padding: 34px 40px;
   margin-top: 0px;
 }
@@ -103,26 +103,26 @@ body {
   gap: 8px;
   font-size: 36px;
   font-weight: 600;
-  color: #000;
+  color: #fff;
 }
 
 .footer-logo i {
-  color: #568c63;
+  color: #fff;
   font-size: 42px;
 }
 
 .footer-left p {
   font-size: 14px;
   margin-top: 8px;
-  color: #000;
+  color: #fff;
 }
 
 /* Right: links stacked under each other */
 .footer-links {
   list-style: none;
   display: flex;
-  flex-direction: column; /* stack vertically */
-  align-items: flex-end;  /* align to the right */
+  flex-direction: column; 
+  align-items: flex-end;  
   gap: 10px;
   margin: 0;
   padding: 0;
@@ -131,18 +131,18 @@ body {
 
 .footer-links a {
   text-decoration: none;
-  color: #2a4359;
+  color: #fff;
   font-size: 16px;
   transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #568c63;
+  color: #000;
 }
 
 /* Up icon */
 .up-icon {
-  color: #568c63;
+  color: #fff;
   font-size: 18px;
   transition: transform 0.3s ease;
 }
