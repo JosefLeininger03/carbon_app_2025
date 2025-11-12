@@ -8,16 +8,22 @@ from capp.carbon_app.forms import BusForm, CarForm, PlaneForm, FerryForm, Motorb
 carbon_app=Blueprint('carbon_app',__name__)
 
 
-#These are the emisions per passenger and per transport Add sources!!!!!!!!!!!
-efco2={'Bus':{'Diesel':0.10231,'CNG':0.08,'Petrol':0.10231,'No Fossil Fuel':0},
-    'Car':{'Petrol':0.18592,'Diesel':0.16453,'No Fossil Fuel':0},
-    'Plane':{'Petrol':0.24298},
-    'Ferry':{'Diesel':0.11131, 'CNG':0.1131, 'No Fossil Fuel':0},
-    'Motorbike':{'Petrol':0.09816,'No Fossil Fuel':0},
-    'Electricscooter':{'No Fossil Fuel':0},
-    'Bicycle':{'No Fossil Fuel':0},
-    'Walk':{'No Fossil Fuel':0},
-    'Train':{'No Fossil Fuel':0}}
+#These are the emissions per passenger and per transport (kg CO2 / km)
+efco2 = {
+    'Bus': {'Electric': 0.00115, 'Diesel': 0.03},
+    'Car': {
+        'Petrol': {'Small': 0.150, 'Medium': 0.198, 'Big': 0.261},
+        'Diesel': {'Small': 0.174, 'Medium': 0.229, 'Big': 0.302},
+        'Electric': {'Small': 0.0045, 'Medium': 0.0059, 'Big': 0.0078}
+    },
+    'Plane': {'Economy': 0.127, 'Economy Premium': 0.155, 'Business': 0.285},
+    'Ferry': {'Diesel': 0.186, 'Electric': 0.084},
+    'Motorbike': {'Petrol': 0.08156},
+    'Electricscooter': {'Electric': 0},
+    'Bicycle': {'No Fossil Fuel': 0},
+    'Walk': {'No Fossil Fuel': 0},
+    'Train': {'Electric': 0.007, 'Diesel': 0.091}
+}
 
 
 #carbon app
@@ -57,7 +63,8 @@ def new_entry_car():
         car_size = form.car_size.data
         transport_key = 'Car'
 
-        co2 = float(kms) * efco2[transport_key][fuel]
+        co2_factor = efco2[transport_key][fuel][car_size]
+        co2 = float(kms) * co2_factor
         co2 = float("{:.2f}".format(co2))
         transport_label = f"{car_size} Car"
         emissions = Transport(kms=kms, transport=transport_label, fuel=fuel, co2=co2, total=co2, author=current_user)
