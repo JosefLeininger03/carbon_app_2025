@@ -8,6 +8,7 @@ application = Flask(__name__)
 
 application.config['SECRET_KEY'] = os.environ['SECRET_KEY']  
 DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
+DBVAR = 'postgresql://postgres:CarbonApp2025@awseb-e-tmuurzkbwj-stack-awsebrdsdatabase-py5ppvk7vvds.cits0wosai3z.us-east-1.rds.amazonaws.com:5432//ebdb'
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 application.config['SQLALCHEMY_BINDS'] ={'transport': DBVAR}
 
