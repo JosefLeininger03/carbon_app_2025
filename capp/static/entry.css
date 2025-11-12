@@ -166,7 +166,7 @@ h4 {
 /*Container table_main */
 .table_main {
   display: flex;
-  background: #c5c8d9;
+  background: #f5f5f5;
   }  
 .table_main .container {
   display: flex;
@@ -287,4 +287,5 @@ h4 {
     padding: 10px;
     text-align: center;
   }
+
 }
