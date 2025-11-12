@@ -61,7 +61,7 @@
 }
 
 .carbon-app-hero__cta--primary {
-  background: #69c67a;
+  background: #ff5a00;
   color: #0f2414;
   padding: 14px 28px;
   border-radius: 999px;
@@ -71,7 +71,7 @@
 .carbon-app-hero__cta--primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 22px 46px rgba(97, 189, 115, 0.45);
-  background: #5ab86b;
+  background: #ff5a00;
 }
 
 .carbon-app-hero__cta--link {
@@ -114,7 +114,7 @@
   justify-content: center;
   gap: 12px;
   min-height: 120px;
-  background: #f4f4f4;
+  background: #ebe3cd;
   border-radius: 20px;
   color: #1e2d20;
   text-decoration: none;
