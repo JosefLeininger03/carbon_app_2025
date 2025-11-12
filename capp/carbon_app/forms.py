@@ -4,6 +4,8 @@ from wtforms.validators import InputRequired
 
 class BusForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
+  fuel_type = SelectField('Type of Fuel', [InputRequired()],
+   choices=[('Petrol', 'Small', 'Medium', 'Big'), ('CNG', 'CNG'), ('Petrol', 'Petrol'), ('No Fossil Fuel', 'No Fossil Fuel')])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
     choices=[('Diesel', 'Diesel'), ('CNG', 'CNG'), ('Petrol', 'Petrol'), ('No Fossil Fuel', 'No Fossil Fuel')])
   submit = SubmitField('Submit')
@@ -12,6 +14,8 @@ class CarForm(FlaskForm):
   kms = FloatField('Kilometers', [InputRequired()])
   fuel_type = SelectField('Type of Fuel', [InputRequired()], 
     choices=[('Petrol', 'Petrol'), ('Diesel', 'Diesel'), ('No Fossil Fuel', 'No Fossil Fuel')])
+  car_size = SelectField('Car Size', [InputRequired()],
+    choices=[('Small', 'Small'), ('Medium', 'Medium'), ('Big', 'Big')])
   submit = SubmitField('Submit')  
 
 class PlaneForm(FlaskForm):
