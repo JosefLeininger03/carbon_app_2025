@@ -17,12 +17,14 @@ class User(db.Model, UserMixin):
 
 # Database Transport
 class Transport(db.Model):
+    __bind_key__ = 'transport'
     __tablename__= 'transport_table'
     id = db.Column(db.Integer, primary_key=True)
     kms = db.Column(db.Float)
     transport = db.Column(db.String)
     fuel = db.Column(db.String)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
     co2= db.Column(db.Float)
     total = db.Column(db.Float)  
     user_id = db.Column(db.Integer, db.ForeignKey('user_table.id'), nullable=False)
