@@ -111,14 +111,9 @@ h4 {
   text-decoration: none;
   font-size: 18px;
   background-color: #ff5a00;
-  border: 2px solid  #ff5a00;
+  border: 2px solid  black;
 }
-.btn_carbon_app_new_entry_main:hover {
-  color: #fff;
-  background-color: #ff5a00;
-  border: 2px solid #ff5a00;
-  text-decoration: none;
-}
+
 /*Container new_entry */
 .new_entry {
   display: flex;
